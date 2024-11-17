@@ -5,7 +5,7 @@ package com.sweet.hook.storage
  * date: 2024/11/17 22:06
  * author: xiaolang
  */
-class CoreStorage {
+object CoreStorage {
     //6 phone
     fun getWxOldId(): String {
         return ""
