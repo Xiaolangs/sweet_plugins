@@ -9,4 +9,7 @@ import com.highcapable.yukihookapi.hook.entity.YukiBaseHooker
  */
 abstract class BaseHooker : YukiBaseHooker() {
     abstract fun hook()
+    override fun onHook() {
+
+    }
 }
