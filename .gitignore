@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/yukihookapi-stub/build/
+/yukihookapi-core/build/
