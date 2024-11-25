@@ -41,8 +41,7 @@ android {
 dependencies {
     ksp(com.highcapable.yukihookapi.ksp.xposed)
     compileOnly(de.robv.android.xposed.api)
-    implementation(project(":yukihookapi-stub"))
-    compileOnly(de.robv.android.xposed.api)
+    compileOnly(project(":yukihookapi-stub"))
     implementation(com.github.tiann.freeReflection)
     implementation(androidx.core.core.ktx)
     implementation(androidx.appcompat.appcompat)
