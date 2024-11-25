@@ -10,10 +10,11 @@ import com.highcapable.yukihookapi.hook.param.PackageParam
  * author: xiaolang
  */
 abstract class BaseIHookXposedInit {
-    private fun loadInit(baseContext: Context?) {
+    open fun loadInit(baseContext: Context?) {
         YukiHookAPI.encase(baseContext) {
             load()
         }
     }
-    abstract fun load()
+
+    abstract fun PackageParam.load()
 }

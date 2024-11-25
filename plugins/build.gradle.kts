@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    compileOnly("com.highcapable.yukihookapi:api:1.2.1")
+    api(project(":yukihookapi-core"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

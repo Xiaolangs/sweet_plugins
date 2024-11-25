@@ -36,7 +36,10 @@ android {
 }
 
 dependencies {
-
+    //compileOnly(libs.api2)
+    //ompileOnly("de.robv.android.xposed:api:82")
+   // compileOnly(project(":yukihookapi-core"))
+    compileOnly(project(":plugins"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
