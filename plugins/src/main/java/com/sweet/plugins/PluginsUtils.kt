@@ -7,6 +7,4 @@ package com.sweet.plugins
  */
 object PluginsUtils {
     fun getWxClassLoader(): ClassLoader? = null
-
-
 }
