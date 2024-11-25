@@ -1,6 +1,7 @@
 plugins {
     autowire(libs.plugins.android.library)
     autowire(libs.plugins.kotlin.android)
+    autowire(libs.plugins.maven.publish)
 }
 
 android {
