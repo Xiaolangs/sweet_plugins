@@ -3,6 +3,7 @@ package com.sweet.hook.base
 import android.content.Context
 import com.highcapable.yukihookapi.YukiHookAPI
 import com.highcapable.yukihookapi.hook.param.PackageParam
+import com.sweet.plugins.PluginsHelper
 
 /**
  * description:
@@ -10,11 +11,15 @@ import com.highcapable.yukihookapi.hook.param.PackageParam
  * author: xiaolang
  */
 abstract class BaseIHookXposedInit {
-    open fun loadInit(baseContext: Context?) {
+    private var curPluginsHelper: PluginsHelper? = null
+    open fun loadInit(baseContext: Context?, pluginsHelper: PluginsHelper) {
         YukiHookAPI.encase(baseContext) {
+            curPluginsHelper = pluginsHelper
             load()
         }
     }
+
+    open fun getPluginsHelper() = curPluginsHelper
 
     abstract fun PackageParam.load()
 }
