@@ -28,6 +28,23 @@ class InitHooker : BaseIHookXposedInit() {
     }
 }
 ```
+* ###  申明为甜萝 module项目
+
+在`AndroidManifest`中通过`meta-data`申明:
+
+> - `sweetModule`: 是否甜萝插件
+> - `sweetDescription`: 该模块描述
+
+```xml
+<application .....>
+    <meta-data
+        android:name="sweetModule"
+        android:value="true" />
+    <meta-data
+        android:name="sweetDescription"
+        android:value="描述" />
+</application>
+```
 * ###  最后在`main`下新建`assets`目录，在里面创建`sweet_init`文件，文件里面就可以添加我们刚刚的类了，如：
 ```
 com.sweet.plugins.InitHooker
