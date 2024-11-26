@@ -95,7 +95,7 @@ HttpUtils.download()   : 文件下载
 ```
 * ### LogKTX
 ```
-LogKTX.e()  : 日志打印
+LogKTX.e()      : 日志打印
 LogKTX.eStack() : 打印日志调用栈
 ```
 * ### Scope 协程扩展
