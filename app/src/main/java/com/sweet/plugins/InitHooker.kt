@@ -18,7 +18,7 @@ import com.sweet.utils.LogKTX
  */
 class InitHooker : BaseIHookXposedInit() {
     override fun PackageParam.load() {
-        Log.e("PluginTest", "test: ------2")
+        Log.e("PluginTest", "test: ------2----$curPluginsHelper")
 
         "com.tencent.mm.ui.chatting.viewitems.l0".toClass(PluginsUtils.getWxClassLoader()).method {
             name("a")

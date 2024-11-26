@@ -11,15 +11,12 @@ import com.sweet.plugins.PluginsHelper
  * author: xiaolang
  */
 abstract class BaseIHookXposedInit {
-    private var curPluginsHelper: PluginsHelper? = null
+    open var curPluginsHelper: PluginsHelper? = null
     open fun loadInit(baseContext: Context?, pluginsHelper: PluginsHelper) {
+        curPluginsHelper = pluginsHelper
         YukiHookAPI.encase(baseContext) {
-            curPluginsHelper = pluginsHelper
             load()
         }
     }
-
-    open fun getPluginsHelper() = curPluginsHelper
-
     abstract fun PackageParam.load()
 }

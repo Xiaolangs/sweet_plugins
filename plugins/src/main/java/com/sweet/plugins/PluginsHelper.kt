@@ -19,10 +19,7 @@ class PluginsHelper(val context: Context, private val pluginsApkPath: String) {
     fun getPluginClassLoader() = pluginClassLoader
 
     fun injectPluginAppResources() {
-        context.resources.assets?.current(ignored = true)?.method {
-            name = "addAssetPath"
-            param(String::class.java)
-        }?.call(pluginsApkPath)
+
     }
 
 }
