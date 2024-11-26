@@ -66,18 +66,51 @@ android {
 }
 ```
 ## APIs
+* ### PluginsUtils
+```
+PluginsUtils.getWxClassLoader() : 获取最上层宿主ClassLoader
+PluginsUtils.getWxApplication() : 获取最上层宿主Applicatio
+```
 * ### CoreStorage
 ```
-CoreStorage.getWxId()    : 获取微信号
-CoreStorage.getWxOldId() : 获取原始微信号
-CoreStorage.getPhone()   : 获取手机号
-CoreStorage.getSex()     : 获取性别
-CoreStorage.getNickName(): 获取昵称
-CoreStorage.getSign()    : 获取个性签名
+CoreStorage.getWxId()     : 获取微信号
+CoreStorage.getWxOldId()  : 获取原始微信号
+CoreStorage.getPhone()    : 获取手机号
+CoreStorage.getSex()      : 获取性别
+CoreStorage.getNickName() : 获取昵称
+CoreStorage.getSign()     : 获取个性签名
 ```
 * ### AvatarStorage
 ```
 AvatarStorage.setAvatar() : ImageView 设置头像
 AvatarStorage.getAvatar() : 获取头像
 AvatarStorage.getAvatar() : 获取头像
+```
+* ### HttpUtils
+```
+HttpUtils.get()        : GET请求
+HttpUtils.post()       : POST请求
+HttpUtils.submitForm() : 表单提交
+HttpUtils.download()   : 文件下载
+```
+* ### LogKTX
+```
+LogKTX.e()  : 日志打印
+LogKTX.eStack() : 打印日志调用栈
+```
+* ### Scope 协程扩展
+```
+scope {
+   HttpUtils.get<String>("")
+       .onSuccess {
+          
+        }
+}
+```
+* ### FileExt 文件扩展
+```
+File.smartCreateNewFile() : 创建新文件
+File.smartCreateFolder()  : 创建文件夹
+File.deleteFolder()       : 删除文件夹
+File.md5()                : 获取文件MD5
 ```
