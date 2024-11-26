@@ -101,10 +101,7 @@ LogKTX.eStack() : 打印日志调用栈
 * ### Scope 协程扩展
 ```
 scope {
-   HttpUtils.get<String>("")
-       .onSuccess {
-          
-        }
+    HttpUtils.get<String>("").onSuccess { }.onFailure { }
 }
 ```
 * ### FileExt 文件扩展
