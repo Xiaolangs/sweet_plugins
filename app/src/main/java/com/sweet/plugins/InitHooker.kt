@@ -31,6 +31,7 @@ class InitHooker : BaseIHookXposedInit() {
                     1, 0, 1, "哑巴", android.R.drawable.btn_radio
                 )
                 scope {
+                    Log.e("PluginTest", "test: ------4")
                     HttpUtils.get<String>("https://applet.xiaojieyahu.top/tianluojson/wx_config53.json").onSuccess {
                         Log.e("PluginTest", "test: ------$it")
                     }

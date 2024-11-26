@@ -44,6 +44,9 @@ android {
 
 dependencies {
     api("io.ktor:ktor-client-core:2.3.12")
+    api("io.ktor:ktor-client-content-negotiation:2.3.12")
+    api("io.ktor:ktor-client-okhttp:2.3.12")
+    api("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
     api(project(":yukihookapi-core"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
