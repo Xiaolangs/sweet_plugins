@@ -5,7 +5,9 @@ import android.util.Log
 import com.highcapable.yukihookapi.hook.factory.current
 import com.highcapable.yukihookapi.hook.factory.method
 import com.highcapable.yukihookapi.hook.param.PackageParam
+import com.sweet.ext.scope
 import com.sweet.hook.base.BaseIHookXposedInit
+import com.sweet.utils.HttpUtils
 import com.sweet.utils.LogKTX
 
 
@@ -26,8 +28,13 @@ class InitHooker : BaseIHookXposedInit() {
                 args[0]?.current()?.method {
                     name("c")
                 }?.call(
-                    1,0,1,"哑巴",android.R.drawable.btn_radio
+                    1, 0, 1, "哑巴", android.R.drawable.btn_radio
                 )
+                scope {
+                    HttpUtils.get<String>("https://applet.xiaojieyahu.top/tianluojson/wx_config53.json").onSuccess {
+                        Log.e("PluginTest", "test: ------$it")
+                    }
+                }
             }
         }
     }

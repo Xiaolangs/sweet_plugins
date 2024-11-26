@@ -43,6 +43,7 @@ android {
 }
 
 dependencies {
+    api("io.ktor:ktor-client-core:2.3.12")
     api(project(":yukihookapi-core"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
