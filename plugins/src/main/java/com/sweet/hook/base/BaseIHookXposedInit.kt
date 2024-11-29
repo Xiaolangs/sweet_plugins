@@ -19,4 +19,6 @@ abstract class BaseIHookXposedInit {
         }
     }
     abstract fun PackageParam.load()
+
+    abstract fun launchActivity():String
 }
