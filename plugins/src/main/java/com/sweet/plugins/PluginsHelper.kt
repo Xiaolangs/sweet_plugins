@@ -11,7 +11,9 @@ import dalvik.system.DexClassLoader
  * author: xiaolang
  */
 class PluginsHelper(val context: Context, val pluginsApkPath: String) {
+
     private var pluginResources: Resources? = null
+
     private var pluginClassLoader: DexClassLoader? = null
 
     fun getPluginResources() = pluginResources
@@ -19,6 +21,9 @@ class PluginsHelper(val context: Context, val pluginsApkPath: String) {
     fun getPluginClassLoader() = pluginClassLoader
 
     fun injectPluginAppResources() {
+
+    }
+    fun injectPluginAppResources(context: Context) {
 
     }
 
