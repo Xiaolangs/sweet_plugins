@@ -10,7 +10,7 @@ import dalvik.system.DexClassLoader
  * date: 2024/11/25 13:42
  * author: xiaolang
  */
-class PluginsHelper(val context: Context, private val pluginsApkPath: String) {
+class PluginsHelper(val context: Context, val pluginsApkPath: String) {
     private var pluginResources: Resources? = null
     private var pluginClassLoader: DexClassLoader? = null
 
