@@ -32,8 +32,9 @@ class InitHooker : BaseIHookXposedInit() {
 
 在`AndroidManifest`中通过`meta-data`申明:
 
-> - `sweetModule`: 是否甜萝插件
+> - `sweetModule`     : 是否甜萝插件
 > - `sweetDescription`: 该模块描述
+> - `sweetAuthor`     : 该模块作者
 
 ```xml
 <application .....>
@@ -43,12 +44,34 @@ class InitHooker : BaseIHookXposedInit() {
     <meta-data
         android:name="sweetDescription"
         android:value="描述" />
+    <meta-data
+        android:name="sweetAuthor"
+        android:value="作者" />
 </application>
 ```
 * ###  最后在`main`下新建`assets`目录，在里面创建`sweet_init`文件，文件里面就可以添加我们刚刚的类了，如：
 ```
 com.sweet.plugins.InitHooker
 ```
+## 多功能
+* ###  继承BaseHooker，如：
+```
+object ChatHooker: BaseHooker() {
+    override fun hook() {
+        
+    }
+}
+```
+* ###  通过入口载入，如：
+```
+class InitHooker : BaseIHookXposedInit() {
+    override fun PackageParam.load() {
+        //载入ChatHooker
+        loadHooker(ChatHooker)
+    }
+}
+```
+
 
 ## 插件资源注入
 ```kotlin
@@ -95,7 +118,7 @@ HttpUtils.download()   : 文件下载
 ```
 * ### LogKTX
 ```
-LogKTX.e()  : 日志打印
+LogKTX.e()      : 日志打印
 LogKTX.eStack() : 打印日志调用栈
 ```
 * ### Scope 协程扩展
