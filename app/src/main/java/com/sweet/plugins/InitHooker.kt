@@ -26,4 +26,8 @@ class InitHooker : BaseIHookXposedInit() {
             HttpUtils.get<String>("").onSuccess { }.onFailure { }
         }
     }
+
+    override fun launchActivity(): String {
+       return ""
+    }
 }
