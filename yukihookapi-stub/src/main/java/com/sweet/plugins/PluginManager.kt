@@ -8,7 +8,6 @@ import java.io.File
  * author: xiaolang
  */
 
-data class Plugin(val patch: String, val isEnable: Boolean = true, val helper: PluginsHelper)
 
 object PluginManager {
     private val pluginsHelperList: HashMap<String, PluginsHelper> = hashMapOf()

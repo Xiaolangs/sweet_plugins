@@ -46,8 +46,7 @@ import com.highcapable.yukihookapi.hook.factory.processName
 import com.highcapable.yukihookapi.hook.factory.toClass
 import com.highcapable.yukihookapi.hook.xposed.bridge.YukiXposedModule
 import com.highcapable.yukihookapi.hook.xposed.parasitic.AppParasitics
-import com.sweet.plugins.PluginManager.getPluginsHelper
-import dalvik.system.DexClassLoader
+import com.sweet.plugins.PluginManager
 import java.io.File
 import java.util.Objects
 
@@ -83,7 +82,7 @@ internal class InstrumentationDelegate private constructor(private val baseInsta
     } catch (e: Throwable) {
         val sweetModelPatch = intent!!.getStringExtra("sweetModelPatch")
         if (sweetModelPatch != null) {
-            val pluginsHelper = getPluginsHelper(File(sweetModelPatch))
+            val pluginsHelper = PluginManager.getPluginsHelper(File(sweetModelPatch))
             className?.toClass()?.buildOf<Activity>(pluginsHelper?.getPluginClassLoader()) ?: throw e
         } else if (className?.startsWith(YukiXposedModule.modulePackageName) == true)
             className.toClass().buildOf<Activity>() ?: throw e
