@@ -34,6 +34,5 @@ android {
 }
 
 dependencies {
-    api(project(":plugins"))
     implementation(androidx.annotation.annotation)
 }
